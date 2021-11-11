@@ -33,7 +33,7 @@ export default class ConnectorsList extends BaseCommand {
     app: flags.app(),
     remote: flags.remote(),
     addon: flags.string({
-      description: 'The ID or name for the addon your your connector is attached to',
+      description: 'The ID or name for the addon your connector is attached to',
     }),
     table: flags.boolean({
       description: 'Return the results as a table',

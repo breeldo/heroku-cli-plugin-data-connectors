@@ -1,12 +1,12 @@
 {
-  "name": "@heroku-cli/plugin-data-connectors",
-  "description": "A Heroku CLI Plugin for managing Heroku Data Connectors",
-  "version": "1.0.1",
+  "name": "@heroku-cli/plugin-data",
+  "description": "A Heroku CLI Plugin for managing Heroku Data",
+  "version": "1.0.0",
   "author": "@heroku heroku-front-end@salesforce.com",
-  "bugs": "https://github.com/heroku/heroku-cli-plugin-data-connectors/issues",
+  "bugs": "https://github.com/heroku/heroku-cli-plugin-data/issues",
   "dependencies": {
     "@heroku-cli/color": "^1.1.14",
-    "@heroku-cli/command": "^8.3.0",
+    "@heroku-cli/command": "^8.5.0",
     "@heroku-cli/schema": "^1.0.25",
     "@oclif/command": "^1",
     "@oclif/config": "^1",
@@ -42,7 +42,7 @@
     "/oclif.manifest.json",
     "/yarn.lock"
   ],
-  "homepage": "https://github.com/heroku/heroku-cli-plugin-data-connectors",
+  "homepage": "https://github.com/heroku/heroku-cli-plugin-data",
   "keywords": [
     "oclif-plugin"
   ],
@@ -54,7 +54,7 @@
       "@oclif/plugin-help"
     ]
   },
-  "repository": "heroku/heroku-cli-plugin-data-connectors",
+  "repository": "heroku/heroku-cli-plugin-data",
   "publishConfig": {
     "access": "public"
   },

@@ -41,3 +41,7 @@ export async function confirmConnector(connector: string, confirm: string) {
     cli.error(`Confirmation ${color.bold.red(confirm)} did not match ${color.bold.red(connector)}. Aborted.`)
   }
 }
+
+export interface EnhancedCertificate {
+  status: string;
+}

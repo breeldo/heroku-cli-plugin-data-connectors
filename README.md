@@ -39,6 +39,9 @@ USAGE
 * [`heroku data:connectors:resume [CONNECTOR]`](#heroku-dataconnectorsresume-connector)
 * [`heroku data:connectors:update [CONNECTOR]`](#heroku-dataconnectorsupdate-connector)
 * [`heroku data:connectors:wait [CONNECTOR]`](#heroku-dataconnectorswait-connector)
+* [`heroku data:enhanced-certificates:disable [ADDON]`](#heroku-dataenhanced-certificatesdisable-addon)
+* [`heroku data:enhanced-certificates:enable [ADDON]`](#heroku-dataenhanced-certificatesenable-addon)
+* [`heroku data:enhanced-certificates:status [ADDON]`](#heroku-dataenhanced-certificatesstatus-addon)
 
 ## `heroku data:connectors`
 
@@ -51,7 +54,7 @@ USAGE
 OPTIONS
   -a, --app=app        app to run command against
   -r, --remote=remote  git remote of app to use
-  --addon=addon        The ID or name for the addon your your connector is attached to
+  --addon=addon        The ID or name for the addon your connector is attached to
   --json               Return the results as JSON
   --table              Return the results as a table
 
@@ -67,7 +70,7 @@ EXAMPLES
   heroku data:connectors --addon=your-postgres-addon --table
 ```
 
-_See code: [src/commands/data/connectors/index.ts](https://github.com/heroku/heroku-cli-plugin-data-connectors/blob/v1.0.1/src/commands/data/connectors/index.ts)_
+_See code: [src/commands/data/connectors/index.ts](https://github.com/heroku/heroku-cli-plugin-data-connectors/blob/v1.0.0/src/commands/data/connectors/index.ts)_
 
 ## `heroku data:connectors:create`
 
@@ -95,7 +98,7 @@ EXAMPLES
   --exclude-column public.users.password
 ```
 
-_See code: [src/commands/data/connectors/create.ts](https://github.com/heroku/heroku-cli-plugin-data-connectors/blob/v1.0.1/src/commands/data/connectors/create.ts)_
+_See code: [src/commands/data/connectors/create.ts](https://github.com/heroku/heroku-cli-plugin-data-connectors/blob/v1.0.0/src/commands/data/connectors/create.ts)_
 
 ## `heroku data:connectors:destroy [CONNECTOR]`
 
@@ -116,7 +119,7 @@ EXAMPLES
   $ heroku data:connectors:destroy gentle-connector-1234 --confirm gentle-connector-1234
 ```
 
-_See code: [src/commands/data/connectors/destroy.ts](https://github.com/heroku/heroku-cli-plugin-data-connectors/blob/v1.0.1/src/commands/data/connectors/destroy.ts)_
+_See code: [src/commands/data/connectors/destroy.ts](https://github.com/heroku/heroku-cli-plugin-data-connectors/blob/v1.0.0/src/commands/data/connectors/destroy.ts)_
 
 ## `heroku data:connectors:info [CONNECTOR]`
 
@@ -137,7 +140,7 @@ EXAMPLES
   $ heroku data:connectors:info gentle-connector-1234 --json
 ```
 
-_See code: [src/commands/data/connectors/info.ts](https://github.com/heroku/heroku-cli-plugin-data-connectors/blob/v1.0.1/src/commands/data/connectors/info.ts)_
+_See code: [src/commands/data/connectors/info.ts](https://github.com/heroku/heroku-cli-plugin-data-connectors/blob/v1.0.0/src/commands/data/connectors/info.ts)_
 
 ## `heroku data:connectors:pause [CONNECTOR]`
 
@@ -154,7 +157,7 @@ EXAMPLE
   $ heroku data:connectors:pause gentle-connector-1234
 ```
 
-_See code: [src/commands/data/connectors/pause.ts](https://github.com/heroku/heroku-cli-plugin-data-connectors/blob/v1.0.1/src/commands/data/connectors/pause.ts)_
+_See code: [src/commands/data/connectors/pause.ts](https://github.com/heroku/heroku-cli-plugin-data-connectors/blob/v1.0.0/src/commands/data/connectors/pause.ts)_
 
 ## `heroku data:connectors:resume [CONNECTOR]`
 
@@ -171,7 +174,7 @@ EXAMPLE
   $ heroku data:connectors:resume gentle-connector-1234
 ```
 
-_See code: [src/commands/data/connectors/resume.ts](https://github.com/heroku/heroku-cli-plugin-data-connectors/blob/v1.0.1/src/commands/data/connectors/resume.ts)_
+_See code: [src/commands/data/connectors/resume.ts](https://github.com/heroku/heroku-cli-plugin-data-connectors/blob/v1.0.0/src/commands/data/connectors/resume.ts)_
 
 ## `heroku data:connectors:update [CONNECTOR]`
 
@@ -197,7 +200,7 @@ EXAMPLE
   --remove-excluded-column public.parcels.key
 ```
 
-_See code: [src/commands/data/connectors/update.ts](https://github.com/heroku/heroku-cli-plugin-data-connectors/blob/v1.0.1/src/commands/data/connectors/update.ts)_
+_See code: [src/commands/data/connectors/update.ts](https://github.com/heroku/heroku-cli-plugin-data-connectors/blob/v1.0.0/src/commands/data/connectors/update.ts)_
 
 ## `heroku data:connectors:wait [CONNECTOR]`
 
@@ -214,5 +217,53 @@ EXAMPLE
   $ heroku data:connectors:wait gentle-connector-1234
 ```
 
-_See code: [src/commands/data/connectors/wait.ts](https://github.com/heroku/heroku-cli-plugin-data-connectors/blob/v1.0.1/src/commands/data/connectors/wait.ts)_
+_See code: [src/commands/data/connectors/wait.ts](https://github.com/heroku/heroku-cli-plugin-data-connectors/blob/v1.0.0/src/commands/data/connectors/wait.ts)_
+
+## `heroku data:enhanced-certificates:disable [ADDON]`
+
+Disable enhanced certificates on an Addon
+
+```
+USAGE
+  $ heroku data:enhanced-certificates:disable [ADDON]
+
+DESCRIPTION
+  Read more about this feature at https://devcenter.heroku.com/articles/heroku-data-enhanced-certificates
+```
+
+_See code: [src/commands/data/enhanced-certificates/disable.ts](https://github.com/heroku/heroku-cli-plugin-data-connectors/blob/v1.0.0/src/commands/data/enhanced-certificates/disable.ts)_
+
+## `heroku data:enhanced-certificates:enable [ADDON]`
+
+Enable enhanced certificates on an Addon
+
+```
+USAGE
+  $ heroku data:enhanced-certificates:enable [ADDON]
+
+DESCRIPTION
+  Read more about this feature at https://devcenter.heroku.com/articles/heroku-data-enhanced-certificates
+
+EXAMPLE
+  $ heroku data:enhanced-certificates:enale happy-postgres-1234 -a example-app
+```
+
+_See code: [src/commands/data/enhanced-certificates/enable.ts](https://github.com/heroku/heroku-cli-plugin-data-connectors/blob/v1.0.0/src/commands/data/enhanced-certificates/enable.ts)_
+
+## `heroku data:enhanced-certificates:status [ADDON]`
+
+Get the status of Enhanced Certificates
+
+```
+USAGE
+  $ heroku data:enhanced-certificates:status [ADDON]
+
+OPTIONS
+  --json  Return the results as JSON
+
+DESCRIPTION
+  Read more about this feature at https://devcenter.heroku.com/articles/heroku-data-enhanced-certificates
+```
+
+_See code: [src/commands/data/enhanced-certificates/status.ts](https://github.com/heroku/heroku-cli-plugin-data-connectors/blob/v1.0.0/src/commands/data/enhanced-certificates/status.ts)_
 <!-- commandsstop -->
